@@ -95,6 +95,7 @@ export default class VelcroModifier extends Modifier<Signature> {
         left: `${x}px`,
         margin: 0,
         visibility: referenceHidden ? 'hidden' : 'visible',
+        display: referenceHidden ? 'none' : 'block',
       });
 
       setVelcroData?.(middlewareData.metadata);
