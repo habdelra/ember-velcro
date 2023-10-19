@@ -79,16 +79,16 @@ export default class VelcroModifier extends Modifier<Signature> {
           offset(offsetOptions),
           flip(flipOptions),
           shift(shiftOptions),
-          ...middleware,
           hide({ strategy: 'referenceHidden' }),
           hide({ strategy: 'escaped' }),
+          ...middleware,
           velcroData(),
         ],
         placement,
         strategy,
       });
 
-      const { referenceHidden } = middlewareData.hide;
+      const { referenceHidden } = middlewareData.hide ?? {};
 
       Object.assign(floatingElement.style, {
         top: `${y}px`,
